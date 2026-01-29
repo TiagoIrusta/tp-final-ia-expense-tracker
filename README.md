@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+#  EcoTracker - Control de Gastos con IA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web Full Stack para la gestión de finanzas personales. Permite registrar ingresos y gastos, visualizar el balance en tiempo real y mantener un historial seguro en la nube.
 
-Currently, two official plugins are available:
+**Trabajo Práctico Final - Inteligencia Artificial**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Tecnologías Utilizadas
+* **Frontend:** React + TypeScript + Vite
+* **Estilos:** Tailwind CSS (Diseño Responsivo & Dark Mode)
+* **Backend & Base de Datos:** Supabase (PostgreSQL)
+* **Autenticación:** Supabase Auth
+* **Testing:** Vitest + React Testing Library
+* **Deploy:** Vercel
 
-## React Compiler
+##  Funcionalidades (Requisitos Cumplidos)
+- [x] **Autenticación:** Sistema de Login y Registro seguro.
+- [x] **CRUD Completo:**
+    - **C**reación de transacciones.
+    - **L**ectura de historial.
+    - **A**ctualización (Edición) de montos y conceptos.
+    - **E**liminación de registros.
+- [x] **Seguridad:** Políticas RLS (Row Level Security) para que cada usuario vea solo sus datos.
+- [x] **UI/UX:** Interfaz moderna, modo oscuro y adaptable a celulares.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Screenshots
 
-## Expanding the ESLint configuration
+| Login | Dashboard | Edición |
+|:---:|:---:|:---:|
+| ![Login](./screenshots/login.png) | ![Dashboard](./screenshots/dashboard.png) | ![Edición](./screenshots/edicion.png) |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##  Instrucciones de Instalación
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/TiagoIrusta/tp-final-ia-expense-tracker.git](https://github.com/TiagoIrusta/tp-final-ia-expense-tracker.git)
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Configurar Variables de Entorno:**
+    Crea un archivo `.env` en la raíz del proyecto basándote en el archivo `.env.example`:
+    ```env
+    VITE_SUPABASE_URL=tu_url_de_supabase
+    VITE_SUPABASE_ANON_KEY=tu_clave_anonima
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4.  **Correr el proyecto:**
+    ```bash
+    npm run dev
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+5.  **Ejecutar Tests:**
+    ```bash
+    npm run test
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Desarrollo con IA
+Este proyecto fue desarrollado utilizando un flujo de trabajo asistido por IA:
+1.  Generación de prototipo UI.
+2.  Refactorización de componentes.
+3.  Generación de lógica de base de datos (SQL).
+4.  Creación de Tests Unitarios automatizados.
